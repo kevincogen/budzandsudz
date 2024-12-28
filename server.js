@@ -169,6 +169,9 @@ app.get('/', (req, res) => {
     res.render('index', { people });
 });
 
+// Export the app to be used by Vercel
+module.exports = app;
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
