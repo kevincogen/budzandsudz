@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budz and Sudz Flavour Picks 2025</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <header>
+    <a href="https://open.spotify.com/playlist/4AM8KOagFuz5knGqLoCrI2?si=cb5ee242aa654f56" target="_blank">
+      <h1>Budz and Sudz Flavour Picks 2024</h1>
+    </a>
+  </header>
+    <main>
+        <div class="card-grid">
+            <% people.forEach(person => { %>
+                <div class="card">
+                    <h3><%= person.name %>:</h3>
+                    <ol>
+                        <% person.songs.forEach(song => { %>
+                            <li><%= song %></li>
+                        <% }); %>
+                    </ol>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <script src="/js/script.js"></script> <!-- Include the random color script -->
+</body>
+</html>
+

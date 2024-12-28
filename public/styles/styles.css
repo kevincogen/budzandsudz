@@ -1,0 +1,134 @@
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e2e2e2; /* Light grey background for fallback */
+  color: #222222; /* Dark text for readability */
+  background-image: url('/images/neo.png'); /* Path to your JPEG image */
+  background-size: cover; /* Cover the entire screen */
+  background-position: center center; /* Center the background image */
+  background-attachment: fixed; /* Keep the background fixed while scrolling on desktop */
+  text-decoration: none;
+}
+
+header {
+  background-color: rgba(255, 87, 51, 0.8); /* Slight transparency for header */
+  color: white;
+  text-align: center;
+  padding: 2rem 0; /* Increase padding for more breathing space */
+  font-weight: 700; /* Make the font weight bold */
+  letter-spacing: 2px;
+  background-image: linear-gradient(45deg, #FF5733, #FF8C00, #FFCC00, #FF5733); /* Gradient effect */
+  background-size: 400% 400%; /* Gradients will be larger to move slowly */
+  animation: gradientAnimation 5s ease infinite; /* Animation for a moving gradient */
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4); /* Soft shadow for better visibility */
+  text-decoration: none;
+}
+
+header a {
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Inherit the text color from the parent (header) */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  font-size: 4rem; /* Larger font size for impact */
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif; /* A more modern, bold font */
+  color: #2cc1b2f3; /* Default text color */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Ensure text has a sharp contrast */
+  text-decoration: none; /* Removes the underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect for the header text */
+h1:hover {
+  color: #28a745; /* Green color when hovered */
+  cursor: pointer; /* Change the cursor to a pointer to indicate clickability */
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.2); /* Light semi-transparent background */
+  border: 4px solid #333333;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.3);
+  padding: 25px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4), -12px -12px 20px rgba(255, 255, 255, 0.4);
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #FF5733;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+
+/* For screens wider than 1024px, the grid will have 4 columns */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* For screens <= 1024px, 3 columns */
+  }
+}
+
+/* For screens wider than 768px but narrower than 1024px, the grid will have 2 columns */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* For screens <= 768px, 2 columns */
+  }
+}
+
+/* For screens narrower than 480px, the grid will have 1 column */
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* For screens <= 480px, 1 column */
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Allow background to scroll with page on mobile */
+    background-size: cover; /* Keep the background image covering the screen */
+  }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent card background */
+  }
+}
