@@ -164,6 +164,9 @@ app.set('view engine', 'ejs');
 // Serve static files from the 'public' folder using an absolute path
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.set('views', path.join(__dirname, 'views')); // Explicitly set the views directory
+
+
 // Route for the main page
 app.get('/', (req, res) => {
     res.render('index', { people });
