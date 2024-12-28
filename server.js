@@ -175,7 +175,7 @@ app.get('/', (req, res) => {
 // Export the app to be used by Vercel
 module.exports = app;
 
-// Start the server
-// app.listen(port, () => {
-//     console.log(`Server running at http://localhost:${port}`);
-// });
+//Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
